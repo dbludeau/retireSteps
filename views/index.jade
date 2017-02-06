@@ -1,0 +1,75 @@
+extends layout
+
+block content
+    div#header
+        h1 Retirement Stepper
+    div#main_body(style="width: 100%")
+        span(style="float: right")
+            button.button#updateButton(onclick="showHideUpdateDiv()") { update }
+            button.button#login(onclick="showLogin()") { login }
+        div#data_input
+            table.data_table
+                tr
+                    td
+                    td Goal Amount
+                    td Current Progress
+                tr
+                    td Emergency Fund
+                    td: input(type="text" value="#{emergency.goal}")#emer_goal
+                    td: input(type="text" value="#{emergency.current}")#emer_curr
+                tr
+                    td Company 401k Match
+                    td: input(type="text")#match_goal
+                    td: input(type="text")#match_curr
+                tr
+                    td Debt Payoff
+                    td: input(type="text")#debt_goal
+                    td: input(type="text")#debt_curr
+                tr
+                    td IRA Contributions
+                    td: input(type="text")#ira_goal
+                    td: input(type="text")#ira_curr
+                tr
+                    td Company 401k Max
+                    td: input(type="text")#max_goal
+                    td: input(type="text")#max_curr
+                tr
+                    td Short Term Savings
+                    td: input(type="text")#sav_goal
+                    td: input(type="text")#sav_curr
+                tr
+                    td Investing
+                    td: input(type="text")#inv_goal
+                    td: input(type="text")#inv_curr
+            span(style="float: right")
+                button.button#saveButton(onclick="saveUpdate()") save
+        div#balloon0.balloon
+            h3 Build Emergency Fund
+            p 3-6 months expenses, liquid
+            div#balloon0_progress.balloon_progress
+        div#balloon1.balloon
+            h3 Company 401k Match
+            p Match employer contribution
+            div#balloon1_progress.balloon_progress
+        div#balloon2.balloon
+            h3 Pay Off Debt
+            p Pay off highest interest loans first
+            div#balloon2_progress.balloon_progress
+        div#balloon3.balloon
+            h3 IRA
+            p Roth or Traditional, up to $5,500
+            div#balloon3_progress.balloon_progress
+        div#balloon4.balloon
+            h3 Company 401k Max
+            p Up to $18,000
+            div#balloon4_progress.balloon_progress
+        div#balloon5.balloon
+            h3 Short Term Savings
+            p Expenses in the next 1-5 years
+            div#balloon5_progress.balloon_progress
+        div#balloon6.balloon
+            h3 Investing
+            p I-bonds, index funds etc...
+            div#balloon6_progress.balloon_progress
+
+

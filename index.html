@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BudgetStepper</title>
+    <link href="assets/general.css" type="text/css" rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous">
+    </script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous">
+    </script>
+    <script src="assets/general.js" type="application/javascript"></script>
+    <script>
+        window.onload = function () {
+            loadData();
+        };
+    </script>
+</head>
+<body>
+    <div id="header">
+        <h1>Budget Stepper</h1>
+    </div>
+    <div id="main_body" style="width: 100%">
+        <span style="float: right"><button id="updateButton" class="button" onclick="showHideUpdateDiv()">update</button></span>
+        <div id="data_input">
+            <table class="data_table">
+                <tr>
+                    <td></td>
+                    <td>Goal Amount</td>
+                    <td>Current Progress</td>
+                </tr>
+                <tr>
+                    <td>Emergency Fund</td>
+                    <td><input id="emer_goal" type="text" /></td>
+                    <td><input id="emer_curr" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Company 401k Match</td>
+                    <td><input id="match_goal" type="text" /></td>
+                    <td><input id="match_curr" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Debt Payoff</td>
+                    <td><input id="debt_goal" type="text" /></td>
+                    <td><input id="debt_curr" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Roth IRA</td>
+                    <td><input id="ira_goal" type="text" /></td>
+                    <td><input id="ira_curr" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Company 401k Max</td>
+                    <td><input id="max_goal" type="text" /></td>
+                    <td><input id="max_curr" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Short Term Saving</td>
+                    <td><input id="sav_goal" type="text" /></td>
+                    <td><input id="sav_curr" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Investing</td>
+                    <td><input id="inv_goal" type="text" /></td>
+                    <td><input id="inv_curr" type="text" /></td>
+                </tr>
+            </table>
+            <span style="float: right"><button id="saveButton" class="button" onclick="saveUpdate()">save</button></span>
+        </div>
+        <div class="balloon" id="balloon0">
+            <h3>Build Emergency Fund</h3>
+            <p>3-6 months expenses, liquid</p>
+            <div class="balloon_progress" id="balloon0_progress"></div>
+        </div>
+        <div class="balloon" id="balloon1">
+            <h3>Company 401k Match</h3>
+            <p>Match employer contribution</p>
+            <div class="balloon_progress" id="balloon1_progress"></div>
+        </div>
+        <div class="balloon" id="balloon2">
+            <h3>Pay off Debt</h3>
+            <p>Pay highest interest loans first</p>
+            <div class="balloon_progress" id="balloon2_progress"></div>
+        </div>
+        <div class="balloon" id="balloon3">
+            <h3>IRA</h3>
+            <p>Roth or Traditional, up to $5,500</p>
+            <div class="balloon_progress" id="balloon3_progress"></div>
+        </div>
+        <div class="balloon" id="balloon4">
+            <h3>Company 401k Max</h3>
+            <p>Up to $18,000</p>
+            <div class="balloon_progress" id="balloon4_progress"></div>
+        </div>
+        <div class="balloon" id="balloon5">
+            <h3>Short Term Savings</h3>
+            <p>Expenses in the next 3-5 years</p>
+            <div class="balloon_progress" id="balloon5_progress"></div>
+        </div>
+        <div class="balloon" id="balloon6">
+            <h3>Investing</h3>
+            <p>I-bonds, index funds etc...</p>
+            <div class="balloon_progress" id="balloon6_progress"></div>
+        </div>
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+</html>

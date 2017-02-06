@@ -1,0 +1,14 @@
+To Do:
+
+2/6/2017:
+-fix login button layouts
+-get register area set up
+-set up auth with Passport
+-set up mongo db
+-make page work.
+-Should the user be able to play with it, then if they want
+    to save data the need to register?
+-Use email addresses to register?  Makes it easy to be unique, but then we
+    have to deal with verifying the address.
+-With username we need to check for uniqueness.
+-password complexity...
